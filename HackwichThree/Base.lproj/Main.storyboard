@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Second View Controller-->
+        <!--Weather Converter-->
         <scene sceneID="9Ec-ql-B7i">
             <objects>
                 <viewController id="mgn-vl-6DU" customClass="SecondViewController" customModule="HackwichThree" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,8 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EC3-3e-UOf">
-                                <rect key="frame" x="129" y="230" width="175" height="120"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="izA-w7-fsG">
+                                <rect key="frame" x="90" y="148" width="229" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZkX-xH-Bdm">
+                                <rect key="frame" x="162" y="257" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Convert"/>
+                                <connections>
+                                    <action selector="computeCelsius:" destination="mgn-vl-6DU" eventType="touchUpInside" id="DYm-BN-kaA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Celsius" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EC3-3e-UOf">
+                                <rect key="frame" x="96" y="410" width="204" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
@@ -29,16 +44,53 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="LXo-Tz-aiW"/>
                     </view>
-                    <navigationItem key="navigationItem" id="LLU-Pk-mKU"/>
+                    <navigationItem key="navigationItem" title="Weather Converter" id="LLU-Pk-mKU"/>
                     <connections>
-                        <outlet property="homePageLabel" destination="EC3-3e-UOf" id="aff-7f-Mnx"/>
+                        <outlet property="celsiusNumber" destination="EC3-3e-UOf" id="WOp-RJ-HHs"/>
+                        <outlet property="farenheitNumber" destination="izA-w7-fsG" id="fjV-VI-Yji"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKl-vO-RhK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="725.60000000000002" y="41.829085457271368"/>
         </scene>
-        <!--View Controller-->
+        <!--My Bucket List-->
+        <scene sceneID="8Og-in-3BF">
+            <objects>
+                <viewController id="KVh-Eh-HaP" customClass="ThirdViewController" customModule="HackwichThree" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cdm-tt-rFM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aMb-El-UG7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellReuseIdentifier" id="S1O-fn-GCc">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S1O-fn-GCc" id="OSF-aA-zby">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SEC-UG-IZS"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Bucket List" id="A3d-1P-tqC"/>
+                    <connections>
+                        <outlet property="tableView" destination="aMb-El-UG7" id="0Tq-rD-Yaf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TYa-hO-eE4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="725.60000000000002" y="798.35082458770626"/>
+        </scene>
+        <!--About Me-->
         <scene sceneID="QH5-ei-1zN">
             <objects>
                 <viewController id="paS-xs-Yow" customClass="ViewController" customModule="HackwichThree" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,10 +98,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bx1-lh-4rP">
-                                <rect key="frame" x="127" y="291" width="133" height="86"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bx1-lh-4rP">
+                                <rect key="frame" x="-532" y="410" width="1439" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2019-03-14 at 5.51.32 PM" translatesAutoresizingMaskIntoConstraints="NO" id="40E-Qr-Oar">
+                                <rect key="frame" x="226" y="146" width="93" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14f-hE-o96">
+                                <rect key="frame" x="24" y="335" width="92" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eh1-qp-1lq">
+                                <rect key="frame" x="86" y="352" width="324" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2P-Rr-9L8">
+                                <rect key="frame" x="24" y="365" width="93" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Label" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7dj-rc-QnI">
+                                <rect key="frame" x="32" y="472" width="327" height="146"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="11"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_8393 2" translatesAutoresizingMaskIntoConstraints="NO" id="cnf-Ox-9To">
+                                <rect key="frame" x="16" y="106" width="172" height="221"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dcx-Tm-N4P">
+                                <rect key="frame" x="192" y="324" width="127" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -57,9 +152,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3gJ-R2-mdl"/>
                     </view>
-                    <navigationItem key="navigationItem" id="SFZ-ps-PB5"/>
+                    <navigationItem key="navigationItem" title="About Me" id="SFZ-ps-PB5"/>
                     <connections>
-                        <outlet property="aboutLabel" destination="bx1-lh-4rP" id="ZVe-gP-J3f"/>
+                        <outlet property="businessLabel" destination="eh1-qp-1lq" id="esH-0c-m2B"/>
+                        <outlet property="classesLabel" destination="7dj-rc-QnI" id="QRh-SU-fhL"/>
+                        <outlet property="jerimieLabel" destination="Dcx-Tm-N4P" id="Dds-e8-L0M"/>
+                        <outlet property="myMajorIs" destination="M2P-Rr-9L8" id="rbc-yf-Ztf"/>
+                        <outlet property="myNameIs" destination="14f-hE-o96" id="KEt-se-0X7"/>
+                        <outlet property="springClassesLabel" destination="bx1-lh-4rP" id="chT-dT-Rcj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gNe-N8-Xa4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -78,17 +178,18 @@
                     <connections>
                         <segue destination="RyZ-IS-WYs" kind="relationship" relationship="viewControllers" id="chg-vi-Mqf"/>
                         <segue destination="YQc-hS-726" kind="relationship" relationship="viewControllers" id="Z3h-e3-eWM"/>
+                        <segue destination="6OW-Zm-izG" kind="relationship" relationship="viewControllers" id="3eR-br-0eI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iD8-t1-Aie" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1005" y="-291"/>
         </scene>
-        <!--About-->
+        <!--About Me-->
         <scene sceneID="z3P-ij-fex">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RyZ-IS-WYs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="About" image="icons8-about" id="5y8-52-DaI"/>
+                    <tabBarItem key="tabBarItem" title="About Me" image="icons8-woman-profile-25" id="5y8-52-DaI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cWU-ig-brU">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -103,11 +204,11 @@
             </objects>
             <point key="canvasLocation" x="-55.200000000000003" y="-622.03898050974522"/>
         </scene>
-        <!--Home-->
+        <!--Weather-->
         <scene sceneID="dtw-oT-lLj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YQc-hS-726" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="icons8-home-page-filled-25" id="V0C-8G-wfq"/>
+                    <tabBarItem key="tabBarItem" title="Weather" image="icons8-sun-25" id="V0C-8G-wfq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0eb-nu-Ced">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -122,9 +223,31 @@
             </objects>
             <point key="canvasLocation" x="-55.200000000000003" y="41.829085457271368"/>
         </scene>
+        <!--Bucket List-->
+        <scene sceneID="8Cc-rx-VMC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6OW-Zm-izG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bucket List" image="icons8-bulleted-list-25" id="Cqm-4r-msg"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rGz-40-COu">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KVh-Eh-HaP" kind="relationship" relationship="rootViewController" id="niN-RA-W9w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PGC-2y-8HB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55" y="787"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="icons8-about" width="25" height="25"/>
-        <image name="icons8-home-page-filled-25" width="25" height="25"/>
+        <image name="IMG_8393 2" width="1122" height="1769"/>
+        <image name="Screen Shot 2019-03-14 at 5.51.32 PM" width="152" height="136"/>
+        <image name="icons8-bulleted-list-25" width="25" height="25"/>
+        <image name="icons8-sun-25" width="25" height="25"/>
+        <image name="icons8-woman-profile-25" width="25" height="25"/>
     </resources>
 </document>

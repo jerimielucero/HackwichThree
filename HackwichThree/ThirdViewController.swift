@@ -1,42 +1,32 @@
 //
-//  SecondViewController.swift
+//  ThirdViewController.swift
 //  HackwichThree
 //
-//  Created by Jerimie Lucero on 2/7/19.
+//  Created by Jerimie Lucero on 3/14/19.
 //  Copyright © 2019 Jerimie Lucero. All rights reserved.
 //
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class ThirdViewController: UIViewController {
 
+    @IBOutlet var tableView: UITableView!
     
-    @IBOutlet var farenheitNumber: UITextField!
+    var myLists = ["hello","hi"]
     
-    
-    @IBOutlet var celsiusNumber: UILabel!
-    
-    
-    @IBAction func computeCelsius(_ sender: Any) {
-        
-       self.celsiusNumber.text = ""
-        
-        var userText = Int(farenheitNumber.text!)!
-       
-        userText = (userText-32) * 5/9
-       
-        celsiusNumber.text = "\(userText) degress celcius"
-        
-        
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return myLists.count
     }
     
-    
-    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")!;
+        let text = myLists[indexPath.row]
+        cell.textLabel?.text = text
+        return cell
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
 
         // Do any additional setup after loading the view.
     }
