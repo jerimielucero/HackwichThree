@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
     
-    var myLists = ["hello","hi"]
+    var myLists = ["Travel around the world","Buy more stocks", "Be financially stable in 6 years", "Graduate in 2 years", "Buy my own house before I turn 30 years old"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myLists.count
